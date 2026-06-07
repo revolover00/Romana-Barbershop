@@ -1,0 +1,6 @@
+{
+  "name": "Romana Barbershop",
+  "description": "Premium, elegant, and editorial website for Romana Barbershop in Phoenix, AZ, featuring services, booking, barbers, and hours.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  
+  --color-bg-deep: #111614;
+  --color-bg-card: #181d1b;
+  --color-bg-accent: #212825;
+  --color-mint: #2cc990;
+  --color-mint-bright: #63f3bf;
+  --color-mint-glow: rgba(44, 201, 144, 0.15);
+  --color-gold: var(--color-mint);
+  --color-gold-bright: var(--color-mint-bright);
+  --color-gold-glow: var(--color-mint-glow);
+  
+  --color-text-light: #f3fbf8;
+  --color-text-muted: #9eb5ac;
+  --color-text-dark: #111614;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg-deep);
+    color: var(--color-text-light);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.7;
+    font-weight: 300;
+    color: var(--color-text-muted);
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    min-height: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary {
+    background-color: var(--color-gold);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-gold);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-gold-bright);
+    box-shadow: 0 0 25px var(--color-gold-glow);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-light);
+    border: 1px solid rgba(245, 242, 235, 0.2);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    transform: translateY(-2px);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-bg-deep);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
